@@ -59,14 +59,16 @@ html, body {
 
 /**/    /*  end of reset  */    /**/
 
-.fullFlexCenter{
-	justify-content: center;
-	align-items: center;
+.FlexProps(@jc, @ai, @fd){
+	display: flex;
+	justify-content: @jc;
+	flex-direction: @fd;
+	align-items: @ai;
 }
 
-.padTB{
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+.padTB(@remTop, @remBottom){
+	padding-top: (@remTop)rem;
+	padding-bottom: (@remBottom)rem;
 }
 
 .padLR{
@@ -86,10 +88,8 @@ main{
 	background-image: url('/css/images/biohazardHeart.jpg');
 	
 	header{
-		display: flex;
 		border: solid;
-		flex-direction: column;
-		.fullFlexCenter();
+		.FlexProps(space-around; column; stretch;);
 
 		img{
 			height: 20rem;
