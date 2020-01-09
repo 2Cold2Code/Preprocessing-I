@@ -67,13 +67,13 @@ html, body {
 }
 
 .padTB(@remTop, @remBottom){
-	padding-top: (@remTop)rem;
-	padding-bottom: (@remBottom)rem;
+	padding-top: @remTop;
+	padding-bottom: @remBottom;
 }
 
-.padLR{
-	padding-left: 2rem;
-	padding-right: 2rem;
+.padLR(@remLeft, @remRight){
+	padding-left: @remLeft;
+	padding-right: @remRight;
 }
 
 html{
@@ -89,7 +89,7 @@ main{
 	
 	header{
 		border: solid;
-		.FlexProps(space-around; column; stretch;);
+		.FlexProps(space-around; column; stretch);
 
 		img{
 			height: 20rem;
@@ -114,7 +114,7 @@ main{
 			justify-content: center;
 			font-size: 3rem;
 			align-self: space-around;
-			.padTB();
+			.padTB(2rem; 2rem);
 		}
 	}
 }
@@ -126,7 +126,7 @@ section{
 
 	h2{
 		font-size: 3rem;
-		.padTB();
+		.padTB(2rem, 2rem);
 	}
 
 	p{
